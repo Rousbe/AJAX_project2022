@@ -1,0 +1,25 @@
+/*Rakenteen muotoilu*/
+body {
+    margin: 10px auto;
+    min-width: 250px;
+    max-width: 50%;
+    background: linear-gradient(90deg, #b198ec, #f3a2d4);
+    min-height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+  }
+
+nav {
+  font-size: 16px;  
+  padding: 5%;
+}
+
+#elokuvat {
+  border: 2px solid black;
+  background: linear-gradient(120deg, #fff, #f3a2d4);
+}
+
+#sijainnit { 
+  border: 1px solid black; 
+}
+
