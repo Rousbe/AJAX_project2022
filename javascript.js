@@ -52,10 +52,11 @@ function toUniqueArray(a) {
             newArr.push(a[i]);
         }
     }
-    return newArr; // Tuo teatterilistan ilman tuplateattereita
+    //Tuo teatterilistan ilman tuplateattereita
+    return newArr;
 }
 
-//Haetaan xml-tiedostosta haluttuja asioita
+//Haetaan Finnkinon xml-tiedostosta haluttuja tietoja
 function haeTiedot() {
 
     var teatteriValinta = document.getElementById('sijainnit');
@@ -75,6 +76,7 @@ function haeTiedot() {
 
             var otsikot = "";
 
+            //Haetaan teatteri, kuva ja aika
             for (i = 0; i < valikoima.length; i++) {
                 var teatterinNimi = valikoima[i].getElementsByTagName('Theatre').item(0).firstChild.nodeValue;
 
@@ -82,9 +84,10 @@ function haeTiedot() {
                     var posterit = valikoima[i].getElementsByTagName('EventMediumImagePortrait').item(0).firstChild.nodeValue;
                     var elokuvaAika = valikoima[i].getElementsByTagName('dttmShowStart').item(0).firstChild.nodeValue;
 
-                    //Poistaa T-kirjaimen näytösajasta, jonka xml-tiedosto antaa
+                    //Poistaa ylimääräisen T-kirjaimen näytösajasta, jonka xml-tiedosto antaa
                     elokuvaAika = elokuvaAika.replace("T", " " + '<br>');
 
+                    //Haetaan elokuvan nimi, ikäraja, linkki synopsikseen ja elokuvan genre
                     var elokuvaNimi = valikoima[i].getElementsByTagName('Title').item(0).firstChild.nodeValue;
                     var raja = valikoima[i].getElementsByTagName('RatingImageUrl').item(0).firstChild.nodeValue;
                     var linkki = valikoima[i].getElementsByTagName('EventURL').item(0).firstChild.nodeValue;
